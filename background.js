@@ -6,7 +6,6 @@
  */
 chrome.app.runtime.onLaunched.addListener(function () {
     
-    // Center this shiz.  Boom.
     var screenWidth = screen.availWidth;
     var screenHeight = screen.availHeight;
     var width = 1100;
@@ -24,7 +23,7 @@ chrome.app.runtime.onLaunched.addListener(function () {
     function(window) {
         window.contentWindow.onload = function () {
             // Retrieve the webview element
-            var webview = window.contentWindow.document.querySelector('#pcast');
+            var webview = window.contentWindow.document.querySelector('#yt');
 
             webview.addEventListener('newwindow', function (e) {
               // Event handler for when external links are clicked because of
@@ -36,11 +35,11 @@ chrome.app.runtime.onLaunched.addListener(function () {
             chrome.commands.onCommand.addListener(function(command) {
                 //console.log('Command:', command);
                 if(command == "pause")
-                    webview.executeScript({ code: "document.getElementsByClassName('play_pause_button')[0].click();" });
+                    webview.executeScript({ code: "document.getElementsByClassName('ytp-play-button')[0].click();" });
                 if(command == "next")
-                    webview.executeScript({ code: "document.getElementsByClassName('skip_forward_button')[0].click();" });
+                    webview.executeScript({ code: "document.getElementsByClassName('ytp-next-button')[0].click();" });
                 if(command == "previous")
-                    webview.executeScript({ code: "document.getElementsByClassName('skip_back_button')[0].click();" });
+                    webview.executeScript({ code: "document.getElementsByClassName('ytp-prev-button')[0].click();" });
             });
         };
     });

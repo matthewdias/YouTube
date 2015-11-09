@@ -1,7 +1,4 @@
-Pocket Caster
+YouTube
 ======
 
-Needed a chrome app for Pocket Casts. Tabs are so last year.
-
-##Screenshot
-![Screenshot](assets/pocketcaster_window.png)
+Chrome app for YouTube. Based on jomurgel's design for Pocket Casts.
